@@ -370,9 +370,13 @@ test('"remove" #1', function() {
     row.set(1, 1);
     row.set(2, 2);
     
-    equal(row.remove(0), undefined);
-    equal(row.remove(1), undefined);
-    equal(row.remove(2), undefined);
+    row.remove(0);
+    row.remove(1);
+    row.remove(2);
+    
+    equal(row.get(0), undefined);
+    equal(row.get(1), undefined);
+    equal(row.get(2), undefined);
 });
 
 test('"remove" #2', function() {
@@ -399,4 +403,16 @@ test('"remove" #2', function() {
     row.remove(3);
 
     equal(row.last(), 1);
+});
+
+test('"empty"', function() {
+    var row = new Row();
+
+    row.set(0, 0);
+    row.set(1, 1);
+    row.set(2, 2);
+
+    row.empty();
+
+    equal(row.count(), 0);
 });

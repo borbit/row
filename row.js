@@ -1,9 +1,5 @@
 function Row() {
-    this.items = {};
-    this.nextIndex = null;
-    this.currentIndex = null;
-    this.firstIndex = null;
-    this.lastIndex = null;
+    this.empty();
 }
 
 Row.prototype.set = function(index, value) {
@@ -40,7 +36,7 @@ Row.prototype.next = function() {
     return this.get(this.nextIndex++);
 };
 
-Row.prototype.count = function(value) {
+Row.prototype.count = function() {
     var count = 0;
     for (var i in this.items) {
         if (this.items.hasOwnProperty(i)) {
@@ -108,6 +104,14 @@ Row.prototype.remove = function(index) {
         this.firstIndex = null;
         this.lastIndex = null;
     }
+};
+
+Row.prototype.empty = function() {
+    this.items = {};
+    this.nextIndex = null;
+    this.currentIndex = null;
+    this.firstIndex = null;
+    this.lastIndex = null;
 };
 
 Row.prototype.unshift = function(value) {
