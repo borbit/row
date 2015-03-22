@@ -1,3 +1,5 @@
+(function(root) {
+
 function Row() {
     this.empty();
 }
@@ -154,6 +156,11 @@ Row.prototype._calcNextIndexAfter = function(index) {
     return index;
 };
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module != 'undefined' &&
+    typeof module.exports != 'undefined') {
     module.exports = Row;
+} else {
+    root['Row'] = Row;
 }
+
+})(this);
