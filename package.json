@@ -1,9 +1,5 @@
 {
-    "name": "row",
-    "version": "0.0.1",
-    "description": "row",
-    "priavte": true,
-    "contributors": [
-        "Serge Borbit <serge.borbit@gmail.com>"
-    ]
+  "name": "row",
+  "version": "0.0.1",
+  "author": "Serge Borbit"
 }
